@@ -1,16 +1,31 @@
+
+##################  else block  ###################
+
 # Pythons Exception Handling has feature of "else" but its absent in java.
+# try-except-else-finally 
 # else block only executes if try block executes without failure
 
 try:
+    # risky code like accessing the txt file
     print("Outer try block")
 except:
+    # handling code 
     print("Outer except block")
 else:
+    # success code like reading contents of file.txt
     print("Else block")
 finally:
+    # cleanup code
     print("Outer finally block")
 
 print("End of program")
 
 # Usually in Java, developer writes the success code at the end of the try block 
 # and if the exception occures earlier, the code is skipped eg. flag=false
+
+
+
+#####################  Types of Exceptions  ############
+
+# Predefined Exceptions -> in-built exceptions. Will be raised automatically by PVM
+# User Defined Exceptions -> to raise the exception explicitly

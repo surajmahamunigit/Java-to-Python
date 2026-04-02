@@ -1,0 +1,16 @@
+# Pythons Exception Handling has feature of "else" but its absent in java.
+# else block only executes if try block executes without failure
+
+try:
+    print("Outer try block")
+except:
+    print("Outer except block")
+else:
+    print("Else block")
+finally:
+    print("Outer finally block")
+
+print("End of program")
+
+# Usually in Java, developer writes the success code at the end of the try block 
+# and if the exception occures earlier, the code is skipped eg. flag=false

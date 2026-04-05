@@ -1,0 +1,186 @@
+# Unlike Java, Python doesnt have char datatype.
+# Python has positive and negative index.
+# +ve index --> left to right
+# _ve index --> left to right
+
+s='Python'
+#  012345
+# -6-5-4-3-2-1
+
+########  Ways to access string characters  #######
+
+####### 1. Index operator --> s[index] --> to access a single character from the string. 
+
+s[1] # y
+
+
+####### 2. slice operator --> s[begin:end:step]
+
+# s[:end] --> begin is optional, default value is 0 
+# s[begin:] --> end is optional, deafault value is len(s)
+# s[begin:end] --> represnts a range of characters from begin to end-1
+
+# s[begin:end:step] --> 
+# begin and end values can be +ve or -ve.
+# step is optional, default value is 1
+# step value can be +ve or -ve but never 0. 
+# If step value is +ve, then slicing is done from left to right. [Forward direction]
+# If step value is -ve, then slicing is done from right to left. [Backward direction]
+# Forward direction --> default value begin=0, end=len(s)
+#                   --> if end=0, then the string is empty.
+
+# Backward direction --> default value begin=-1, end= -(len(s)+1)
+#                    --> if end=-1, then the string is empty.
+
+
+
+######## 3. + Operator --> concatenation operator
+
+s="Python"+"Programming" # valid in Python and Java
+# s="Python"+100 # invalid in Python and fine in Java --> both operator needs to be string type.
+
+
+####### 4. * Operator --> repetition operator
+
+s= "Python"*3   # valid in Python not in Java
+# s= 3*"Python" # valid in Python not in Java
+
+# s= "Python" * "Python" # invalid in Python
+# s= "Python" * 3.5     # invalid in Python and Java 
+# s= "Python" * -3      # valid in Python and Java but result is empty string.
+# s= "Python" * 0       # valid in Python but result is empty string.
+
+
+
+####### 5. in and not in operator --> membership operator
+
+s1= "Python Programming"
+s2= "Python"
+
+if s2 in s1:
+    print("s2 is present in s1")
+else:
+    print("s2 is not present in s1")
+
+
+
+######## 6. <,<=,>,>=,==,!= --> Comparision Operators
+
+s1= "Python"
+s2= "Pycharm" 
+
+# string comparision is done based on the unicode value of the characters.
+# unicode value of 
+# P is 80, 
+# y is 121, 
+# t is 116, # c is 99   --> 116 > 99 --> s1 > s2
+# h is 104, # a is 97
+# o is 111, # r is 114
+# n is 110, # m is 109
+
+
+####### 7. strip(), lstrip(), rstrip() --> to remove unwanted spaces from the string.
+
+# Java has trim() method to remove unwanted spaces from the string. It removes only leading and trailing spaces but not the spaces in between the string. strip() method in java is used to remove unwanted spaces from the string. It removes leading, trailing and in between spaces from the string. stripLeading() method is used to remove leading spaces from the string. stripTrailing() method is used to remove trailing spaces from the string.
+
+# lstrip() method is used to remove leading spaces from the string. 
+# rstrip() method is used to remove trailing spaces from the string. 
+# strip() method is used to remove leading and trailing spaces from the string. It does not remove spaces in between the string.
+
+
+
+###### find(), rfind(), index(), rindex() --> to find the index of the first occurrence of a substring in the string.
+
+
+### find(), rfind() 
+
+# in java, we have indexOf() method to find the index of the first occurrence of a substring in the string. It returns -1 if the substring is not found in the string. lastIndexOf() method is used to find the index of the last occurrence of a substring in the string. It also returns -1 if the substring is not found in the string.
+
+# in python, we have find() method and is used to find the index of the first occurrence of a substring in the string. It returns -1 if the substring is not found in the string. 
+# rfind() method is used to find the index of first occurance of a substring from right side but index is always measured from the right side of the string. It also returns -1 if the substring is not found in the string.
+
+# find(substring, start, end) --> to find the index of the first occurrence of a substring in the remaining string. It returns -1 if the substring is not found in the remainingstring.
+
+
+#### index(), rindex()
+
+# index() method is used to find the index of the first occurrence of a substring in the string. It raises ValueError if the substring is not found in the string.
+
+print()
+email=input("Enter your email: ")
+
+try :
+    index=email.index("@")            # can raise ValueError if @ is not present 
+    print("Index of @ is: ", index)
+except ValueError:
+    print("@ is not present in the email")
+
+
+# rindex() method is used to find the index of the first occurrence of a substring from the right side of the string or last occurance of the string. It raises ValueError if the substring is not found in the string.  
+
+##### 8. count()  ############
+
+# count() method is used to count the number of occurrences of a substring in the string. It returns 0 if the substring is not found in the string. same as Java.
+
+
+########## split() and join() ############
+
+# split() method is used to split the string into a list of substrings based on the specified delimiter. It returns a list of substrings. If the delimiter is not specified, then it splits the string based on whitespace. same as Java.
+#split(Operator) --> to split the string based on the specified operator. It returns a list of substrings. If the operator is not specified, then it splits the string based on whitespace.
+
+# join() method is used to join the list of substrings into a single string based on the specified delimiter. It returns a string. same as Java.
+#separator.join(list) --> to join the list of substrings into a single string based on the specified separator. It returns a string. If the separator is not specified, then it joins the list of substrings based on whitespace.
+
+s1="This is a sample string"
+s2= s1.split() # default delimiter is whitespace
+#s2=s1.split("-") # delimiter is "-"
+print(s2) # ['This', 'is', 'a', 'sample', 'string']
+
+s3= "-".join(s2) # delimiter is "-"
+print(s3) # This-is-a-sample-string
+
+
+
+################# Case change methods ##############
+
+#upper() method is used to convert all the characters in the string to uppercase. same as Java.
+
+#lower() method is used to convert all the charcters in the string to lowercase. same as java
+
+#swapcase() method is used to convert all the uppercase characters in the string to loewrcase and all the lowecase characters into uppercase. same as java
+
+#title() method is used to convert first character in each word of the string to uppercase and all other letters to lowercase. same as java
+
+#capitalize() method is used to convert only the first character of first word the string to uppercase and keeps all other characters in lowercase. same as java
+
+
+
+########### startswith() and endswith() methods ############
+
+# startswith() method is used to check whether the given string starts with the given substring or not. It returns True if the string starts with the given substring, otherwise it returns False. same as java
+
+# endswith() method is used to check whether the given string ends with given substring or not. it returns true if the string ends with the given substring, otherwise it returns false. same as java
+
+
+######### to check types of charcters present in string  #######
+
+# isalpha() methos is used to check whether all the characters present in the string are alphabets ot nit [a-z, A-Z]. It returns True if all the characters are alphabets, otherwise it returns False. same as java
+
+# isaplhanumeric() methos is used to check whether all the characters present in the string are alphabets or digits [a-z, A-Z, 0-9]. It returns True if all the characters are alphabets or digits, otherwise it returns False. same as java
+
+# isdigit() methis is used to check whether all the characters present in the string are digits [0-9]. It returns True if all the characters are digits, otherwise it returns False. same as java
+
+# islower() method is used to check whether all the characters present in the string are lowercase or not. It returns True if all the characters are lowercase, otherwise it returns False. same as java
+
+# isupper() method is used to check whether all the characters present in the string are uppercase or not. It returns True if all the characters are uppercase, otherwise it returns False. same as java
+
+# isspace() method is used to check whether all the characters present in the string are whitespace or not. It returns True if all the characters are whitespace, otherwise it returns False. same as java
+
+# istitle() method is used to check whether the string is in title case or not. It returns True if the string is in title case, otherwise it returns False. same as java
+
+##############################  end  #########################################################
+
+
+
+
+

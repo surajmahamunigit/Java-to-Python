@@ -11,7 +11,7 @@ s='Python'
 
 ####### 1. Index operator --> s[index] --> to access a single character from the string. 
 
-s[1] # y
+s[1] # y 
 
 
 ####### 2. slice operator --> s[begin:end:step]
@@ -178,9 +178,7 @@ print(s3) # This-is-a-sample-string
 
 # istitle() method is used to check whether the string is in title case or not. It returns True if the string is in title case, otherwise it returns False. same as java
 
-##############################  end  #########################################################
-
-
+##############################  end  ############################################
 
 
 

@@ -5,7 +5,7 @@
 # insertion order is preserved
 # duplicates are allowed
 # heterogeneous objects are allowed
-# its dynamic in nature
+# its not dynamic in nature
 # its immutable
 # () is used to create a tuple in python. if we want to create an empty tuple, then we can use empty parentheses () or we can use tuple() function to create an empty tuple. if we want to create a tuple with one element, then we need to add a comma after the element. otherwise, it will be considered as a string/integer. for example, t=(1,) is a tuple with one element and t=(1) is a string.
 

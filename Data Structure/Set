@@ -1,0 +1,101 @@
+########################## Set ##########################
+
+#####  Set Properties #####
+
+# insertion order is not preserved
+# indexing and slicing are not allowed
+# duplicates are not allowed
+# heterogeneous objects are allowed
+# its dynamic in nature
+# its mutable
+# {} is used to represent set in python
+# we can apply union, intersection, difference and symmetric difference ooperations on sets
+
+
+#####  Creation of Set #####
+
+# s=set()  --> empty set
+# s={}  --> empty dictionary, not a set
+# s={1,2,3}  --> set with three elements
+# s=set([1,2,3])  --> set created from a list
+# s=set((1,2,3))  --> set created from a tuple
+# s=set("hello")  --> set created from a string (it will create a set of unique characters in the string)
+# s=set(range(1,11))  --> set created from a range (1 to 10)
+
+
+##### Operators #####
+
+## Mathematical operators (+, *):
+
+# set1={1,2} and set2={3,4} --> set3=set1+set2 --> TypeError: unsupported operand type(s) for +: 'set' and 'set'
+# set1={1,2} and set2={3,4} --> set4=set1*3 --> TypeError: unsupported operand type(s) for *: 'set' and 'int'
+# mathematical operators are not supported for sets in python. we can use union, intersection, difference and symmetric difference operations to perform set operations.
+
+
+## Equilality operators (==, !=):
+
+# set1={1,2,3} and set2={3,2,1} 
+# set1==set2 --> True, --> same number of elements and same elements but in different order, still they are equal because order is not preserved in sets.
+# set1!=set2 --> False
+
+
+## Relational operators (<, >, <=, >=):
+
+# We can use relational operators to compare sets in python. but the comparison is based on the number of elements in the sets and the elements themselves.
+# set1={1,2} and set2={1,2,3} --> set1<set2 --> True
+# set1>set2 --> False
+# set1<=set2 --> True 
+# set1>=set2 --> False
+
+
+## Membership operators (in, not in):
+
+# set1={1,2,3} --> 2 in set1 --> True
+# 4 in set1 --> False
+# 2 not in set1 --> False
+# 4 not in set1 --> True
+
+
+## set specific operators (|, &, -, ^):
+
+# union (|) --> set1={1,2} and set2={2,3} --> set1|set2 --> {1,2,3}
+
+# intersection (&) --> set1={1,2} and set2={2,3} --> set1&set2 --> {2}
+
+# difference (-) --> set1={1,2} and set2={2,3} --> set1-set2 --> {1}
+
+# symmetric difference (^) --> set1={1,2} and set2={2,3} --> set1^set2 --> {1,3}
+
+
+#### Set Methods #####
+
+# len(s) --> returns the number of elements in the set
+
+###### adding elements to the set :
+# s.add(element) --> adds an element to the set but we cant add duplicate elements to the set, if we try to add a duplicate element it will be ignored.
+# adding a mutable element to the set will raise a TypeError: unhashable type: 'list' because sets can only contain immutable elements. mutable elements like lists, dictionaries and sets cannot be added to a set because they are unhashable.
+# s.add(1) --> adds 1 to the set
+
+# s.update(iterable) --> adds multiple elements to the set from an iterable (like list, tuple, set, etc.) 
+# s.update([1,2,3]) --> adds 1, 2 and 3 to the set
+# s.update(10) --> TypeError: 'int' object is not iterable because 10 is not an iterable, we need to pass an iterable to the update method.
+
+###### removing elements from the set:
+
+# s.remove(element) --> removes an element from the set, if the element is not present in the set it will raise a KeyError: 'element' because the remove method expects the element to be present in the set.
+
+# s.discard(element) --> removes an element from the set, if the element is not present in the set it will not raise an error, it will simply ignore the request to remove the element.
+
+# s.pop() --> removes and returns an arbitrary element from the set, if the set is empty it will raise a KeyError: 'pop from an empty set' because there are no elements to pop from the set.
+# s.clear() --> removes all elements from the set, it will make the set empty.
+
+######## aliasing and cloning of sets:
+
+# s1={1,2,3} --> s2=s1 --> s2 is an alias of s1, both s1 and s2 point to the same set in memory, any changes made to s2 will also affect s1 and vice versa.
+
+# s1={1,2,3} --> s3=s1.copy() --> s3 is a clone of s1, s3 points to a different set in memory, any changes made to s3 will not affect s1 and vice versa.
+
+
+######### set comprehension ########
+
+# set comprehension is a concise way to create sets in python, it is similar to list comprehension but it uses curly braces {} instead of square brackets [].

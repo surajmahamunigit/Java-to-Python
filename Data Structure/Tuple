@@ -10,4 +10,116 @@
 # () is used to create a tuple in python. if we want to create an empty tuple, then we can use empty parentheses () or we can use tuple() function to create an empty tuple. if we want to create a tuple with one element, then we need to add a comma after the element. otherwise, it will be considered as a string/integer. for example, t=(1,) is a tuple with one element and t=(1) is a string.
 
 
-### 
+###  creation of tuple  ###
+
+# t=()  --> empty tuple
+# t=tuple()  --> empty tuple
+# t=(1,)  --> tuple with one element
+# t=1,  --> tuple with one element
+# t=(1,2,3)  --> tuple with three elements
+# t=1,2,3  --> tuple with three elements
+# t=tuple(list1)  --> tuple created from a list
+# t=tuple(string)  --> tuple created from a string
+# t=tuple(set1)  --> tuple created from a set
+# t=tuple(dict1)  --> tuple created from a dictionary (it will create a tuple of keys of the dictionary)
+# t=tuple(range(1,10))  --> tuple created from a range
+# t=eval(input("Enter the elements of the tuple: "))  --> tuple created from user input 
+
+
+###  Accessing elements of a tuple  ###
+
+## using index: (10,20,30,40,50) :
+
+# t[0]  --> first element, t[1]  --> second element, t[-1]  --> last element
+# t[1000] --> IndexError: tuple index out of range
+
+## using slicing: (10,20,30,40,50) :
+
+# t[0:3]  --> (10,20,30), t[1:4]  --> (20,30,40), t[:3]  --> (10,20,30), t[2:]  --> (30,40,50), t[:]  --> (10,20,30,40,50)
+
+
+### Operators on tuple  ###
+
+## concatenation operator (+): 
+
+# t1=(10,20) and t2=(30,40) --> t3=t1+t2 --> t3=(10,20,30,40)
+# t1=(10,20) and list1=[30,40] --> t4=t1+list1 --> TypeError: can only concatenate tuple (not "list") to tuple
+# t1=(10,20) --> t2=t1+10 --> TypeError: can only concatenate tuple (not "int") to tuple
+
+
+## repetition operator (*):
+
+# t=(10,20) --> t1=t*3 --> t1=(10,20,10,20,10,20)
+# t=(10,20) --> t2=t*0 --> t2=()
+# t=(10,20) --> t3=t*-1 --> t3=()
+# only positive integers are allowed with repetition operator. if we use negative integers or zero, then it will return an empty tuple.
+
+
+## equality operator (==, !=):
+
+# t1=(10,20) and t2=(10,20) --> t1==t2 --> True, t1!=t2 --> False
+# t1=(10,20) and t2=(20,10) --> t1==t2 --> False, t1!=t2 --> True
+# t1=(10,20) and t2=(10,20,30) --> t1==t2 --> False, t1!=t2 --> True
+
+
+## relational operators (<, >, <=, >=):
+
+# t1=(10,20) and t2=(30,40) --> t1<t2 --> True, t1>t2 --> False, t1<=t2 --> True, t1>=t2 --> False
+# t1=(10,20) and t2=(10,20) --> t1<t2 --> False, t1>t2 --> False, t1<=t2 --> True, t1>=t2 --> True
+
+
+## membership operator (in, not in):
+
+# t=(10,20,30) --> 10 in t --> True, 40 in t --> False, 20 not in t --> False, 50 not in t --> True
+
+
+### Built-in functions on tuple  ###
+
+## len(t)  --> returns the number of elements in the tuple
+
+##count()  --> returns the number of occurrences of a specified element in the tuple
+
+## index()  --> returns the index of the first occurrence of a specified element in the tuple
+
+## reverse()  --> Tuples do not have a reverse() method because they are immutable. 
+
+## reversed()  --> returns an iterator that accesses the given sequence in the reverse order. we can use it to reverse a tuple by converting it to a list and then back to a tuple. for example, t=(10,20,30) --> t1=tuple(reversed(t)) --> t1=(30,20,10)
+
+## sort()  --> Tuples do not have a sort() method because they are immutable.
+
+## sorted()  --> returns a new sorted list from the elements of the given iterable. for example, t=(30,20,10) --> t1=tuple(sorted(t)) --> t1=(10,20,30)
+
+## min()  --> returns the smallest element in the tuple
+
+## max()  --> returns the largest element in the tuple
+
+## sum()  --> returns the sum of all the elements in the tuple (only for numeric tuples)
+
+## append()  --> Tuples do not have an append() method because they are immutable.
+
+## extend()  --> Tuples do not have an extend() method because they are immutable.
+
+## insert()  --> Tuples do not have an insert() method because they are immutable.
+
+## remove()  --> Tuples do not have a remove() method because they are immutable.
+
+## pop()  --> Tuples do not have a pop() method because they are immutable.
+
+## clear()  --> Tuples do not have a clear() method because they are immutable.
+
+
+####  Tuple packing and unpacking  ####
+
+# Tuple packing is the process of creating a tuple by assigning multiple values to a single variable. for example, t=10,20,30 --> t=(10,20,30) is a tuple packing.
+# we can also create a tuple by a=10, b=20, c=30 --> t=a,b,c --> t=(10,20,30) is a tuple packing with variables.  
+
+# Tuple unpacking is the process of assigning the elements of a tuple to multiple variables. for example, t=(10,20,30) --> a,b,c=t --> a=10, b=20, c=30 is a tuple unpacking. we can also use * operator to unpack the remaining elements of the tuple into a list. for example, t=(10,20,30,40,50) --> a,b,*c=t --> a=10, b=20, c=[30,40,50] is a tuple unpacking with * operator. but we cannot use a,b,c,d=t because there are only three elements in the tuple and we are trying to unpack it into four variables. it will raise a ValueError: not enough values to unpack (expected 4, got 3). 
+
+
+####  Tuple comprehension  ####
+
+# Tuple comprehension is not possible in python because tuples are immutable. we cannot change the elements of a tuple after it is created. but we can create a new tuple by using a generator expression. for example, t=(x**2 for x in range(1,6)) --> t is a generator object and we can convert it to a tuple by using tuple() function. for example, t=tuple(x**2 for x in range(1,6)) --> t=(1,4,9,16,25) is a tuple created from a generator expression.
+# we can also create a tuple from a list comprehension by using tuple() function. for example, t=tuple([x**2 for x in range(1,6)]) --> t=(1,4,9,16,25) is a tuple created from a list comprehension. but we cannot use t=(x**2 for x in range(1,6)) because it will create a generator object and not a tuple.
+
+
+##############################  end of Tuple  #################################

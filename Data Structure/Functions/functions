@@ -1,0 +1,80 @@
+###########################  Functions  #########################
+
+# if we use piece of code multiple times in our ptogram, instead of writing it again and again we better go for function
+# function declaration: def calculations():
+# def is compulsory in the defination and rerurn is not. 
+# function can take input in forms of parameters and it can return one or multiple values. most of the time multiple values are returned in form of tuple.
+
+######### Types of arguments ########
+
+# Positional aruments: 
+# these are the arguments passed to the function in positional order.
+# number of args and position of args must be matched.
+# if we change the args position, result will change
+# if we dont provide right number of args, we will get error
+
+# Keyword arguments:
+# we can pass the parameter values by using parameter names 
+# here the order of args is not important, but number of args is important
+
+# Default arguments:
+# sometimes we can provide the default values to the parameters
+# if function is addition(a,b)--> a and b both can default args can be simultaniously, 
+# but if one is default and other one is not, then default has to be the last parameter in function. non-default arg should not come after default arg. 
+
+# Variable length arguments (*arg):
+# by using variable length args, we can pass any number of arguments to the function.
+# using all the args, tuple will be formed.
+# we can do addition(arg1,*arg), addition(*arg, arg1=10), 
+# but we cant do addition(*arg1,*arg2), addition(*arg,arg1)
+
+# Variable length keyword arguments (**arg):
+# same as variable length argument we can pass multiple key value pairs as an argument to the function
+# it will return dictionary 
+
+############### Variables  ########################
+
+# Globle Variable: declared outside the function
+
+# Local Variable: declared inside the function
+
+# Globle keyword:
+# globle keyword is used to make globle variable available to the function, so we can perform the required modification and to declare goble variable inside the function
+# prior to globle declarartion, we can not use the variable 
+
+
+#############  Recursive Function  ############
+
+# the function which calls iteslf is called as recursive function.
+# we can solve the complex problems using the recusrsive function.
+# we can write concise code meaning less length.
+# python has max depth of 995 that means we can only do recursion 995 times.
+
+
+########### Lambda Function  #############
+
+# nameless function
+# used for instant or one time use
+
+########## filter() function ########
+
+# we can use the filter() to filter values from the given sequence based on some condition
+# filter takes only two parameters, filter(function, sequence)
+# length of filter() function output is always less than length of sequence
+# function can be method or lambda function.
+# this is the best place to use lambda function.
+# return type of fileter function is always filter object. so we need to typecast it to list
+
+######### map() function  ###########
+
+# In map(), we can apply some function to each element in the sequence and generate new element.
+# length of map() is always same as sequenece
+# map(function, sequence)
+# return type of fileter function is always map object. so we need to typecast it to list
+
+######## reduce() function #########
+
+# reduce() is not pythons in-built function we need to import it from functools
+# if we want to reduce sequence of values into 1 value then go for reduce
+# output length of reduce() is always 1
+

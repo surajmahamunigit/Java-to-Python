@@ -1,0 +1,198 @@
+########################## Dictionary ##########################
+
+########## Properties ##########
+
+# if we want key value pair then we can use dictionary
+# insertion order is not preserved in dictionary
+# indexing and slicing is not possible in dictionary
+# duplicate keys are not allowed in dictionary but duplicate values are allowed
+# heterogeneous key and values are allowed in dictionary
+# dictionary is mutable data structure
+# it is dymamic data structure
+# d= {k1:v1, k2:v2, k3:v3, k4:v4}
+
+
+########## Creation of Dictionary ##########
+
+# d={} # empty dictionary
+# d=dict() # empty dictionary
+# d={1:'one', 2:'two', 3:'three'} # dictionary with integer keys and string values
+# d={'name':'john', 'age':30, 'city':'new york'} # dictionary with string keys and heterogeneous values
+# d={1:'one', 'two':2, 3.0:'three'} # dictionary with heterogeneous keys and values
+
+# we can create dict from list of tuples
+# l=[('name','john'), ('age',30), ('city','new york')]
+# d=dict(l) # dictionary with string keys and heterogeneous values
+
+# we can create dict from list of lists
+# l=[['name','john'], ['age',30], ['city','new york']]
+# d=dict(l) # dictionary with string keys and heterogeneous values
+
+# we can create dict from tuple of tuples
+# t=(('name','john'), ('age',30), ('city','new york'))
+# d=dict(t) # dictionary with string keys and heterogeneous values
+
+# we can create dict from tuple of lists
+# t=(['name','john'], ['age',30], ['city','new york']) 
+# d=dict(t) # dictionary with string keys and heterogeneous values
+
+# we can create dict from set of tuples
+# s={('name','john'), ('age',30), ('city','new york')}
+# d=dict(s) # dictionary with string keys and heterogeneous values
+
+## we """can't""" create dict from set of lists
+# s={['name','john'], ['age',30], ['city','new york']} # TypeError: unhashable type: 'list'
+
+#Note: we can have tuple of tuples, tuple of lists, list of tuples, list of lists, set of tuples only with two elements. by chance if we have more than two elements then we will get ValueError: dictionary update sequence element #0 has length 3; 2 is required
+
+# Dynamic input:
+# d=eval(input("Enter number of key value pairs: "))
+# print(d)
+
+
+############### accessing values from dictionary :
+
+# we can access values from dictionary using keys
+# d={'name':'john', 'age':30, 'city':'new york'} 
+# print(d['name']) # john
+# print(d['age']) # 30
+
+# if we try to access value using key which is not present in dictionary then we will get KeyError
+# print(d['country']) # KeyError: 'country'
+# to avoid KeyError we should always check for key in dictionary before accessing value
+# if 'country' in d:
+#     print(d['country'])
+
+
+##### adding and updating key value pairs in dictionary :
+# if key is not present in dictionary then it will add new key value pair to dictionary
+# if key is already present in dictionary then it will update the value of that key
+# d={'name':'john', 'age':30, 'city':'new york'}
+# d['country']='usa' # adding new key value pair to dictionary
+# print(d) # {'name': 'john', 'age': 30, 'city': 'new york', 'country': 'usa'}
+# d['age']=31 # updating value of existing key in dictionary
+# print(d) # {'name': 'john', 'age': 31, 'city': 'new york', 'country': 'usa'}
+
+# we can also use update() method to add or update key value pairs in dictionary
+# d={'name':'john', 'age':30, 'city':'new york'} 
+# d.update({'country':'usa'}) # adding new key value pair to dictionary
+
+
+#### removing key value pairs from dictionary :
+# we can use del keyword to remove key value pair from dictionary
+# d={'name':'john', 'age':30, 'city':'new york'}
+# del d['age'] # removing key value pair from dictionary using del keyword
+# we can also delete multiple key value pairs from dictionary using del keyword
+# del d['name'], d['city'] # removing multiple key value pairs from dictionary using del keyword
+#we can also delete entire dictionary using del keyword
+# del d # deleting entire dictionary using del keyword
+# we can also use pop() method to remove key value pair from dictionary
+# d={'name':'john', 'age':30, 'city':'new york'}
+# d.pop('age') # removing key value pair from dictionary using pop() method
+
+
+######################### Operators #########################
+
+#### Mathemtical operators (+, *):
+
+# we can't use + operator to concatenate two dictionaries
+# d1={'name':'john', 'age':30} 
+# d2={'city':'new york', 'country':'usa'}
+# d3=d1+d2 # TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
+
+# we cant use * operator to repeat key value pairs in dictionary
+# d={'name':'john', 'age':30}
+# d2=d*2 # TypeError: unsupported operand type(s) for *: 'dict' and 'int'
+
+##### Comparison operators (==, !=):
+# we can use == operator to compare two dictionaries
+# we can use != operator to compare two dictionaries
+
+##### Relational operators (<, >, <=, >=):
+# we can't use relational operators to compare two dictionaries
+# otherwise we will get TypeError: '<' not supported between instances of 'dict' and 'dict'
+
+##### Membership operators (in, not in):
+# we can use in operator to check if 'key' is present in dictionary or not
+# we can only check for keys in dictionary using in operator, we can't check for values in dictionary using in operator. if key is not present in dictionary then it will return False
+# d={'name':'john', 'age':30, 'city':'new york'}
+# print('name' in d) # True
+# print('john' in d) # False
+
+
+######################### Built-in functions and methods #########################
+
+# len() function: it returns the number of key-value pairs in dictionary
+# d={'name':'john', 'age':30, 'city':'new york'}
+# print(len(d)) # 3
+
+# get() method: it returns the value of the specified key if key is present in dictionary, otherwise it returns None
+# d={'name':'john', 'age':30, 'city':'new york'} 
+# print(d.get('name')) # john
+# print(d.get('country')) # None
+
+# get(key, default_value) method: it returns the value of the specified key if key is present in dictionary, otherwise it returns default_value
+# d={'name':'john', 'age':30, 'city':'new york'}
+# print(d.get('name', 'Not Found')) # john
+# print(d.get('country', 'Not Found')) # Not Found
+
+# update() method: it updates the dictionary with the specified key-value pairs
+# if key is not present in dictionary then it will add new key value pair to dictionary
+# if key is already present in dictionary then it will update the value of that key
+# d={nam:'john', 'age':30, 'city':'new york'} --> d.update({'country':'usa'}) # adding new key value pair to dictionary
+# print(d) # {'name': 'john', 'age': 30, 'city': 'new york', 'country': 'usa'} --> d.update({'age':31})  updating value of existing key in dictionary
+
+# keys() method: it returns a view object that contains the keys of the dictionary
+# d={'name':'john', 'age':30, 'city':'new york'} 
+# print(d.keys()) --> dict_keys(['name', 'age', 'city'])
+
+# values() method: it returns a view object that contains the values of the dictionary
+# d={'name':'john', 'age':30, 'city':'new york'}
+# print(d.values()) --> dict_values(['john', 30, 'new york'])
+# we can also convert the view object returned by keys() and values() method to list using list() function
+# d={'name':'john', 'age':30, 'city':'new york'}
+# print(list(d.keys())) --> ['name', 'age', 'city']
+# print(list(d.values())) --> ['john', 30, 'new york']
+
+
+# items() method: it returns a view object that contains the key-value pairs of the dictionary as tuples in the list
+# d={'name':'john', 'age':30, 'city':'new york'}
+# print(d.items()) --> dict_items([('name', 'john'), ('age', 30), ('city', 'new york')])
+
+# pop() method: it removes the specified key and returns the corresponding value. if key is not present in dictionary then it will raise KeyError
+# d={'name':'john', 'age':30, 'city':'new york'}
+# print(d.pop('age')) # 30 
+# print(d.pop('country')) # KeyError: 'country'
+
+#pop(key, default_value) method: it removes the specified key and returns the corresponding value. if key is not present in dictionary then it will return provided default valu default_value.
+#d={'name':'john', 'age':30, 'city':'new york'}
+#print(d.pop('age', 'Not Found')) # 30
+#print(d.pop('country', 'Not Found')) # Not Found
+
+# popitem() method: it removes and returns an arbitrary key-value pair from the dictionary as a tuple. if dictionary is empty then it will raise KeyError
+
+# clear() method: it removes all key-value pairs from the dictionary, but the dictionary itself remains intact
+
+# setdefault() method: it returns the value of the specified key if key is present in dictionary, otherwise it adds the key with the specified value and returns the value of that key
+# d={100:'A',200:'B",300:'C'}
+# print(d.setdefault(400,'D'))  ##  it will add new item (400:'D') to the dictionary and return the value of that key 
+# if the key is already present in the dictionary then it  will return the value assiciated with they key and it will not update the value of that key
+
+# Aliasing : d1=d2 # both d1 and d2 are pointing to same dictionary in memory, if we make any changes to d1 then it will reflect in d2 and vice versa 
+
+# copy() method: it returns a shallow copy of the dictionary, if we make any changes to the copied dictionary then it will not reflect in the original dictionary and vice versa
+
+
+
+######################### Comprehension  #######################
+
+# in dictionary we can to shortcut the writing code
+# d={key:key*key for key in range(1,6)}
+# d={1:1,2:4,3:9,4:16,5:25} 
+
+
+
+
+
+
+

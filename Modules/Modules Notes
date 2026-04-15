@@ -1,0 +1,38 @@
+######################## Modules ############################
+
+# A group of variables, functions and classes saved to a file is a module
+# Every python file (.py) is module
+# import keyword: If we want to use the members of the module in our program then we have to impor the module using import keyword.
+# We can access the members of the other module by module_name.variable
+# whenever we are using the module in our program, for that module a compiled file will be genegrated and stored on the hard-disk.
+# We can rename the module with shorter-name while importing.
+# import durgasoft as ds
+# from .... import: we can access the members of the module directly without having to use the module-name, by using from ... import
+# from durgasoft import *
+
+# Member Aliasing:
+# so far we module aliasing like 'import module1 as m1'. Now we will see how can we do member aliasing.
+# 
+# from module1 import user as u, add as sum
+
+# Math Module:
+# factorial()
+# sqrt()
+# pow()
+# ceil()
+# floor()
+# fabs()
+
+# Random Module:
+
+# random(): used to generate rand float value between 0 and 1
+
+# uniform(begin,end): used to generate a random float number between begin and end
+
+# randint(begin,end): used to genearate a random number between beging and end, both inclusive.
+
+# randrange(begin,end,step): used to generate random number between bein and end-1
+# In randrange(), begin and step is optional and their default values are 0 and 1
+# but end is not optional.
+
+#  choice(str,list/tuple): used to pick up random object from the indexable datatype.

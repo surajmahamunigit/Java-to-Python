@@ -1,0 +1,127 @@
+############################### File Handling #######################################
+
+# Files are used to store the data permanently
+# There are two types of file: Text file and Binary file
+# Text file is used to store character data
+# Binary file is used to store image, video 
+
+# open(): f=open(file_name,mode) 
+
+# There are different types of modes for text files:
+
+# r: opens file in read mode
+#  : pointer is always at begining position
+#  : if the specified file doesnt not exist then, we will get FileNotFoundError.
+
+# w: opens file in write mode
+#  : if file contains some data then it overrides it.
+#  : if file not present then creates the new file.
+
+# a: opens the file in append mode
+#  : if file already conatins data, then it doesnt override it.
+#  : if specified file doesnt exist then creates new file
+
+# r+: to read and write the data
+#   : pointer will be placed at the begining 
+#   : write will override the old data 
+#   : if file is not found then we will get FileNotFoundError
+
+# w+: to write and read the file
+#   : first old data will be overriden before writing and then read
+#   : if the specified file not found then it will create new file.
+
+# a+: it will append and read the file 
+#   : it will write without overriding existing data and then read.
+#   : if file already exist then we will get FileError.
+
+# x: opens file exclusive creation mode 
+#  : if the file already exist then gives the FileExistError.
+
+# For binary files, just append the b to the existing modes.
+
+# close(). f.close() is used to close the file to free the system resources
+
+# Various Properties of File Object:
+# f.name --> returns file name
+# f.mode --> returns the mode in which file is opened
+# f.closed --> return boolean value to indicate whether file is closed or not
+# f.readable --> returns boolean value to indicate file is readable or not
+# f.writable --> returns boolean value to indicate file is writable or not
+
+############# write ###########
+
+# we can write to file using two methods write() and writelines()
+# we must pass line separator in every write statement or data from all the write statements will be printed on the same line
+
+# For writelines() function we can provide list, tuple, set, and dict as parameter.
+# dict is barely used
+# if we do f.writelines(dict), only keys will be written to the file. and compulsory dict keys has to be string type.
+# if we want to add the values to the file, f.writelines(dict.values())
+
+########## Read #############
+
+# read(): to read all the data from the file
+# read(n): to read first n number of characters from the fime
+# readline(): to read only one line
+# readlines(): to read all the lines into a list
+
+######## with block ##########
+
+# with statement can be used while opening the file. 
+# we use 'with' to group file operations together.
+# when control reaches the end of the block, it will close file, even in case of exception.
+
+######## tell() and seek() #######
+
+# tell(): used to tell the current position of the cursor.
+# f.tell() 
+
+# seek(): seek(n) will make cursor point out to the index n in the file.
+
+###### os.path.isfile() ######
+
+# its used to check if the file is available or not
+# we need to import os
+
+####### read and write csv file ########
+
+# we need to import csv
+# to write csv file we will need csv writer. 
+# f=open('abc.csv','w')
+# w=csv.writer(f)
+# to reader we need csv reader. r=csv.readr(f)
+
+##### zip and unzip files #########
+
+# zip: we need to import zip module first
+# To create a zipfile, we wil have to create the object of the ZipFile class. z=ZipFile(file-name,'mode',ZIP_DEFLATED)
+# z.write('file-name')
+
+# unzip: same as zip, we have to create the object of the ZipFile class with last parameter as ZIP_STORED
+# z.namelist() -> will return the the list of file names.
+
+########### Working with Directory ############3
+
+# os.getcwd() : to get the current directory location
+
+# os.mkdir('file-name'): to create sub-directory with name file-name
+# if the directory already exists then we will get FileExistError.
+
+# os.mkdir('dir1/dir2'): to creates directory dir2 inside already present directory dir1 under current directory
+# make sure dir1 is available otherwise we will get FileNotFoundError
+
+# os.mkdirs('dir1/dir2/dir3'): will create dir1, dir2, and dir3.
+
+# os.rmdir(/dir1'): removes the directory if its empty otherwise raises error FileExistError
+
+# os.removedirs('dir1/dir2'): removes all the directories in the path.
+
+# os.rename('file1','file2'): to rename files
+
+# os.listdir('dir1'): to list out the contet of the current directory
+
+# os.walk('dir1'): to lis out the content of current directory and its sub-directories.
+
+# os.stats(): to get stats about file size, last access time
+
+

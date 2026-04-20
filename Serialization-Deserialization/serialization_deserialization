@@ -1,0 +1,12 @@
+########################### Serialization, Derserialization #############
+
+# dump(): it converts python dict object to a JSON and writes that provided JSON to the json file. 
+# It serializes python dict to a JSON file.
+
+# dumps(): it serizes python dict to a JSON string
+
+# loads(): it deserialzes JSON string to a python dict.
+
+# serializing custom class:
+# we can use customo-bject.__dict__ to convert custom object to the python dict and then do the serialization to JSON file or string.
+# we load/loads will always return the dict object so we to convert it to custom class object. we can use JSON pickle for that. 

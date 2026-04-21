@@ -1,0 +1,10 @@
+############################### Decorators ##############################
+
+# Decorators is function which takes another function as an input, adds extended functionality and returns modified function with extended functionality.
+# The main objective of Decorators function is to add extended functionality to the existing function without modifyng that function.
+# We can define multiple decorators for the method, its called method chaining.
+# @decor2
+# @decor1
+# def add(a,b) -> decor1 output will be considered as an iput to the decor2.
+# 
+
